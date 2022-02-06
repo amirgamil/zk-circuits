@@ -1,0 +1,17 @@
+{
+    "name": "zk-circuits",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "circom:dev": "hardhat circom --deterministic --debug --verbose",
+        "circom:prod": "hardhat circom --verbose"
+    },
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "hardhat": "^2.8.3",
+        "hardhat-circom": "^1.2.0"
+    }
+}
