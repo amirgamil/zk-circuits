@@ -1,19 +1,16 @@
 // include "../node_modules/circomlib/circuits/mimcsponge.circom"
 
 
-template Main() {
-  signal private input x;
-  signal x_squared;
-  signal x_cubed;
-  signal output out;
+//returns 1 if x1 > x2, otherwise returns 0
+template GreaterThan() {
+    signal private input x1;
+    signal private input x2;
+    signal output out;
 
-  x_squared <-- x * x;
-  x_cubed <-- x_squared * x;
-  out <-- x_cubed - x + 7;
+    signal temp;
+    temp <-- x1 - x2 > 0 ? 1 : 0;
 
-  x_squared === x * x;
-  x_cubed === x_squared * x;
-  out === x_cubed - x + 7;
+    out <== temp;
 }
 
 
@@ -40,13 +37,13 @@ template Main() {
 */
 
 /*
-template Main() {
+template main() {
   signal private input x;
   // signal input hash;
 
   signal output out;
 
-  component mimc = MiMCSponge(1, 220, 1);
+  component mimc = mimcsponge(1, 220, 1);
   mimc.ins[0] <== x;
   mimc.k <== 0;
 
@@ -56,4 +53,4 @@ template Main() {
 }
 */
 
-component main = Main();
+component main = GreaterThan();
