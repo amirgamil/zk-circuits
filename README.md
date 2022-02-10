@@ -1,2 +1,2 @@
-# Circuits
-Circuits built for understanding :)
+# Secure exchanges
+secure exchanges backed by zkSNARKS on Ethereum
